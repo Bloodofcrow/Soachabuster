@@ -3,7 +3,7 @@
   <div class="jumbotron text-center">
   <h2> <center> {{entity.name}} </center> </h2>
   <hr>
-  <p>Formulario para agrefar un/una {{entity.name}}.</p>
+  <p>Formulario para agregar un/una {{entity.name}}.</p>
 
   <form name="{{entity.name}}Form" class="form-horizontal" ng-init="load(id)">
     {% for property in entity.properties %}
