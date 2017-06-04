@@ -1,7 +1,12 @@
-//Template para agregar entidades en un documento tipo HTML.
+//Template para agregar entidades.
 <head>
   <title> Agregar {{entity.name}} </title>
   <style type="text/css">
+
+    .Avatar{
+      display: inline-block;
+      width: 200px;
+    }
 
     body{
       background-color: #AACCAA;
@@ -14,6 +19,7 @@
         font-size: 4.5em;
         color: #9A9;
         text-shadow: -2px -2px 1px black;
+        display: inline-block;
     }
 
     input{
@@ -26,6 +32,7 @@
   <div ng-controller="Agregar{{entity.name|capitalize}}Ctrl">
     <div class="jumbotron text-center">
     <h1 class = "Titulo"> <b> {{entity.name}} </b> </h1>
+    <img src="Imagenes/{{entity.name}}.png" class="Avatar">
     <hr>
     <p>Formulario para agregar un/una {{entity.name}}.</p>
 
