@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Agregar Direccion </title>
+    <style type="text/css">
+      .Avatar{
+        display: inline-block;
+        width: 200px;
+      }
+
+      body{
+        background-color: #AACCAA;
+        font-family: "Comic Sans MS";
+        font-size: 20px;
+      }
+
+      .Titulo{
+          font-family: "Tempus Sans ITC";
+          font-size: 4.5em;
+          color: #9A9;
+          text-shadow: -2px -2px 1px black;
+          display: inline-block;
+      }
+
+      input{
+        font-family: "Comic Sans MS";
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="AgregarDireccionCtrl">
+      <div class="jumbotron text-center">
+      <center>
+        <h1 class = "Titulo"> <b> Agregar Direccion </b> </h1>
+        <img src="Imagenes/Direccion.png" class="Avatar">
+      </center>
+      <hr>
+      <h2> Formulario para agregar un/una Direccion. <h2>
+
+      <form name="DireccionForm" class="form-horizontal" ng-init="load(id)">
+        <div class="form-group">
+          <label for="direccion" class="col-sm-2 control-label">Direccion</label>
+          <div class="col-sm-10">
+            <input name="direccion" value="direccion" type="text" ng-model="Direccion.direccion" class="form-control"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ciudad" class="col-sm-2 control-label">Ciudad</label>
+          <div class="col-sm-10">
+            <input name="ciudad" value="ciudad" type="text" ng-model="Direccion.ciudad" class="form-control"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pais" class="col-sm-2 control-label">Pais</label>
+          <div class="col-sm-10">
+            <input name="pais" value="pais" type="text" ng-model="Direccion.pais" class="form-control"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <br><br>
+            <input type="submit" ng-click="cancel()" value="Cancelar" class="btn btn-primary"/>
+            <input type="submit" ng-click="edit(id)" value="Guardar" class="btn btn-success"/>
+          </div>
+        </div>
+      </form>
+      <pre>Direccion = {{Direccion}} | json}}</pre>
+      </div>
+    </div>
+  </body>
+</html>

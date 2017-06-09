@@ -1,0 +1,44 @@
+type string
+type integer
+
+entity Persona { 
+	nombre : string  		//Nombre de la persona.
+	documento : Documento	//Una entidad Documento que identifica a la persona.
+	telefono : integer		//Número de teléfono de la persona.
+	direccion : Direccion	//Una entidad Direccion que pertenece a la persona.
+}
+
+entity Documento {
+	tipo : string			//Tipo del documento de identidad de la persona.
+	numero : integer		//Número de documento de identidad de la persona.
+}
+
+entity Direccion{
+	direccion : string		//Dirección exacta de la persona.
+	ciudad : string			//Ciudad de residencia de la persona.
+	pais : string			//País de residencia de la persona.
+}
+
+entity Vendedor {
+	idEmpresa : integer		//Número de identificación interno de la empresa.
+	persona : Persona 		//Una entidad Persona con todos sus datos.
+}
+
+entity Comprador {
+	idCliente : integer		//Número de identficación del cliente dentro del sistema de Soachabuster.
+	persona : Persona		//Una entidad Persona con todos los datos del cliente.
+	preferencia : Genero	//Una entidad Género para conocer las preferencias del cliente.
+}
+
+entity Pelicula {
+	nombre : string			//Nombre de la película.
+	id : integer			//Número de identificación de la película.
+	genero : Genero 		//Una entidad Género para la película.
+	duracion : integer		//Duración en minutos, de la película.
+	director : string 		//Director de la película.
+}
+
+entity Genero {
+	id : integer			//Id del género.
+	nombre : string 		//Nombre del género.
+}

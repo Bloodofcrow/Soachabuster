@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consulta Documento</title>
+  <style type="text/css">
+      .Avatar{
+        display: inline-block;
+        width: 200px;
+      }
+
+      body{
+        background-color: #AACCAA;
+        font-family: "Comic Sans MS";
+        font-size: 20px;
+      }
+
+      .Titulo{
+        font-family: "Tempus Sans ITC";
+        font-size: 4.5em;
+        color: #9A9;
+        text-shadow: -2px -2px 1px black;
+        display: inline-block;
+      }
+
+      table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+      }
+      table tr:nth-child(even) {
+        background-color: #ffffff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2
+      }
+
+    </style>
+</head>
+  <div ng-controller="ConsultarDocumentoCtrl">
+    <div class="jumbotron text-center">
+      <center>
+        <h1 class="Titulo">Consulta de Documento</h1>
+        <img src="Imagenes/Documento.png" class="Avatar">
+      </center>
+      <hr>
+      <h2>Consulta los/las Documentos que quieras</h2>
+      <table id="list" class="Table">
+        <thead>
+          <tr>
+              <th>Tipo</th>
+              <th>Numero</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
+      <script>
+        $(document).ready(function() {
+          $('#list').DataTable( {
+              columnDefs: [ {
+                  targets: [ 0 ],
+                  orderData: [ 0, 1 ]
+              }, {
+                  targets: [ 1 ],
+                  orderData: [ 1, 0 ]
+              }]
+          } );
+        } );
+      </script>
+  </div>
+</html>
